@@ -197,14 +197,14 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-150 ease-out">
       <div
-        className="w-full max-w-md bg-[#FAF6F0] rounded-t-[32px] sm:rounded-[32px] shadow-2xl border border-white/80 max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-200 ease-out"
+        className="w-full max-w-md bg-[#FAF6F0] rounded-t-[32px] sm:rounded-[32px] shadow-lg border border-white/80 max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-200 ease-out"
         dir="rtl"
       >
         {/* Modal Header */}
         <div className="px-5 pt-4 pb-3 flex items-center justify-between border-b border-black/5 shrink-0">
           <button
             onClick={onClose}
-            className="w-11 h-11 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center text-sila-text active:scale-90 transition-transform duration-100 ease-out"
+            className="w-11 h-11 rounded-full bg-black/5 hover:bg-black/[0.08] flex items-center justify-center text-sila-text active:scale-90 transition-transform duration-100 ease-out"
             aria-label="إغلاق"
           >
             <X className="w-5 h-5" />
@@ -230,13 +230,13 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
                     title={title || 'غلاف الكتاب'}
                     coverImageId={hasRemovedExistingImage ? undefined : bookToEdit?.coverImageId}
                     previewUrl={imagePreviewUrl}
-                    className="rounded-2xl shadow-md border-2 border-white"
+                    className="rounded-2xl shadow-sm border-2 border-white"
                   />
                   <button
                     type="button"
                     onClick={handleRemoveImage}
                     title="حذف الصورة"
-                    className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-sila-red text-white flex items-center justify-center shadow-md active:scale-90"
+                    className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-sila-red text-white flex items-center justify-center shadow-sm active:scale-90"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
@@ -245,7 +245,7 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-24 h-32 rounded-2xl border-2 border-dashed border-[#D5C7B7] bg-white/50 hover:bg-white/80 flex flex-col items-center justify-center gap-1.5 text-sila-muted transition-all active:scale-95 shadow-sm"
+                  className="w-24 h-32 rounded-2xl border-2 border-dashed border-[#D5C7B7] bg-white/50 hover:bg-white/65 flex flex-col items-center justify-center gap-1.5 text-sila-muted transition-all active:scale-95 shadow-sm"
                 >
                   <div className="w-10 h-10 rounded-full bg-sila-amberSoft flex items-center justify-center text-sila-amber">
                     <Camera className="w-5 h-5" />
@@ -484,7 +484,7 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
             type="button"
             onClick={handleSave}
             disabled={isSaving}
-            className="flex-1 min-h-[48px] bg-gradient-to-r from-sila-amber to-sila-amberLight hover:from-sila-amberHover hover:to-sila-amber text-white py-3 px-5 rounded-2xl font-bold text-sm shadow-md active:scale-[0.98] transition-transform duration-100 ease-out flex items-center justify-center gap-2 disabled:opacity-50"
+            className="flex-1 min-h-[48px] bg-gradient-to-r from-sila-amber to-sila-amberLight text-white py-3 px-5 rounded-2xl font-bold text-sm shadow-sm hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {isSaving ? 'جارٍ الحفظ...' : 'حفظ الكتاب'}
           </button>
@@ -492,7 +492,7 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="min-h-[48px] px-6 py-3 rounded-2xl text-xs font-bold text-sila-muted hover:text-sila-text hover:bg-black/5 active:scale-[0.98] transition-transform duration-100 ease-out"
+            className="min-h-[48px] px-6 py-3 rounded-2xl text-xs font-bold text-sila-muted hover:text-sila-text hover:bg-black/[0.02] active:scale-[0.98] transition-transform duration-100 ease-out"
           >
             إلغاء
           </button>

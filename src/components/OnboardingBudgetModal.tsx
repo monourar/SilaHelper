@@ -57,7 +57,7 @@ export const OnboardingBudgetModal: React.FC<OnboardingBudgetModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-md animate-in fade-in duration-200">
       <GlassCard
         variant="elevated"
-        className="w-full max-w-md p-6 sm:p-8 rounded-[32px] text-center space-y-5 shadow-2xl border-2 border-white/90 relative overflow-hidden"
+        className="w-full max-w-md p-6 sm:p-8 rounded-[32px] text-center space-y-5 shadow-lg border-2 border-white/90 relative overflow-hidden"
         dir="rtl"
       >
         {/* Soft background ambient gradient */}
@@ -70,9 +70,9 @@ export const OnboardingBudgetModal: React.FC<OnboardingBudgetModalProps> = ({
             <img
               src="/sila-logo.png"
               alt="شعار SILA"
-              className="w-20 h-20 rounded-3xl shadow-glass-hover border-2 border-white object-cover"
+              className="w-20 h-20 rounded-3xl shadow-sm border-2 border-white object-cover"
             />
-            <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-sila-amber text-white flex items-center justify-center shadow-md">
+            <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-sila-amber text-white flex items-center justify-center shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
             </div>
           </div>
@@ -121,7 +121,7 @@ export const OnboardingBudgetModal: React.FC<OnboardingBudgetModalProps> = ({
                 className={`text-[11px] font-bold px-2.5 py-1 rounded-lg transition-all ${
                   Number(budget) === amount
                     ? 'bg-sila-amber text-white shadow-sm'
-                    : 'bg-black/[0.04] text-sila-muted hover:text-sila-text hover:bg-black/[0.08]'
+                    : 'bg-black/[0.04] text-sila-muted hover:text-sila-text'
                 }`}
               >
                 {formatNumber(amount)} دج
@@ -136,7 +136,7 @@ export const OnboardingBudgetModal: React.FC<OnboardingBudgetModalProps> = ({
             type="button"
             onClick={() => handleConfirm()}
             disabled={isSubmitting}
-            className="w-full min-h-[48px] bg-gradient-to-r from-sila-amber to-sila-amberLight hover:from-sila-amberHover hover:to-sila-amber text-white py-3 px-6 rounded-2xl font-bold text-sm shadow-md active:scale-[0.98] transition-transform duration-150 ease-out flex items-center justify-center gap-2"
+            className="w-full min-h-[48px] bg-gradient-to-r from-sila-amber to-sila-amberLight text-white py-3 px-6 rounded-2xl font-bold text-sm shadow-sm hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
           >
             <Check className="w-4 h-4 stroke-[2.5]" />
             <span>تأكيد وبدء الاستخدام</span>

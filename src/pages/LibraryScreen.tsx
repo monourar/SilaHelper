@@ -125,7 +125,7 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
             onClick={() => setIsGridView((prev) => !prev)}
             title={isGridView ? 'عرض كقائمة' : 'عرض كشبكة'}
             aria-label={isGridView ? 'عرض كقائمة' : 'عرض كشبكة'}
-            className="w-10 h-10 rounded-2xl bg-white/70 hover:bg-white/95 border border-white/80 shadow-glass-sm flex items-center justify-center text-sila-muted hover:text-sila-text active:scale-95 transition-all"
+            className="w-10 h-10 rounded-2xl bg-white/70 hover:bg-white/80 border border-white/80 shadow-sm flex items-center justify-center text-sila-muted hover:text-sila-text active:scale-95 transition-all"
           >
             {isGridView ? <List className="w-4 h-4" /> : <LayoutGrid className="w-4 h-4" />}
           </button>
@@ -135,7 +135,7 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
             onClick={() => setShowFilterSheet((prev) => !prev)}
             title="خيارات الترتيب والتصفية"
             aria-label="خيارات الترتيب والتصفية"
-            className="h-10 px-3.5 rounded-2xl bg-white/70 hover:bg-white/95 border border-white/80 shadow-glass-sm flex items-center gap-2 text-xs font-bold text-sila-muted hover:text-sila-text active:scale-95 transition-all relative"
+            className="h-10 px-3.5 rounded-2xl bg-white/70 hover:bg-white/80 border border-white/80 shadow-sm flex items-center gap-2 text-xs font-bold text-sila-muted hover:text-sila-text active:scale-95 transition-all relative"
           >
             <SlidersHorizontal className="w-4 h-4" />
             <span className="hidden sm:inline">خيارات التصفية</span>
@@ -145,7 +145,7 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
           </button>
 
           {/* Counter Badge */}
-          <span className="text-xs font-bold text-sila-muted bg-white/70 border border-white/80 px-3 py-2 rounded-2xl shadow-glass-sm">
+          <span className="text-xs font-bold text-sila-muted bg-white/70 border border-white/80 px-3 py-2 rounded-2xl shadow-sm">
             {sortedBooks.length} كتاب
           </span>
         </div>
@@ -155,7 +155,7 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
         <GlassCard
           variant="surface"
-          className="md:col-span-7 flex items-center px-4 py-2.5 rounded-2xl shadow-glass-sm focus-within:ring-2 focus-within:ring-sila-amber/30 transition-all"
+          className="md:col-span-7 flex items-center px-4 py-2.5 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-sila-amber/30 transition-all"
         >
           <Search className="w-4 h-4 text-sila-muted/70 shrink-0 ml-2.5" />
           <input
@@ -186,7 +186,7 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
                 className={`py-2 px-4 rounded-xl text-xs font-bold whitespace-nowrap transition-all select-none ${
                   isActive
                     ? 'bg-gradient-to-r from-sila-amber to-sila-amberLight text-white shadow-sm'
-                    : 'bg-white/60 hover:bg-white/90 text-sila-muted border border-white/70'
+                    : 'bg-white/60 hover:bg-white/75 text-sila-muted border border-white/70'
                 }`}
               >
                 {chip.label}
@@ -305,7 +305,7 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
           </p>
           <button
             onClick={onOpenAddModal}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-sila-amber to-sila-amberLight text-white text-xs md:text-sm font-bold py-3 px-6 rounded-xl shadow-md active:scale-95 transition-all"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-sila-amber to-sila-amberLight text-white text-xs md:text-sm font-bold py-3 px-6 rounded-xl shadow-sm hover:opacity-95 active:scale-95 transition-all"
           >
             <Plus className="w-4 h-4" />
             <span>إضافة كتاب جديد</span>

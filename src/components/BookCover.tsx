@@ -73,7 +73,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
   if (activeUrl) {
     return (
       <div
-        className={`relative overflow-hidden shrink-0 shadow-md border border-black/10 bg-sila-parchment ${sizeClasses[size]} ${className}`}
+        className={`relative overflow-hidden shrink-0 shadow-sm border border-black/10 bg-sila-parchment ${sizeClasses[size]} ${className}`}
       >
         <img
           src={activeUrl}
@@ -91,7 +91,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
   if (title.includes('العادات الذرية')) {
     return (
       <div
-        className={`relative overflow-hidden shrink-0 shadow-md border border-[#D5C5B0] bg-gradient-to-b from-[#FFFDF8] via-[#F8F2E6] to-[#EBE0CF] flex flex-col justify-between p-2 select-none ${sizeClasses[size]} ${className}`}
+        className={`relative overflow-hidden shrink-0 shadow-sm border border-[#D5C5B0] bg-gradient-to-b from-[#FFFDF8] via-[#F8F2E6] to-[#EBE0CF] flex flex-col justify-between p-2 select-none ${sizeClasses[size]} ${className}`}
       >
         <div className="absolute inset-y-0 right-0 w-[4px] bg-gradient-to-l from-black/15 to-transparent" />
         <div className="text-center font-bold text-[#2A1E17] leading-tight line-clamp-2 mt-0.5">
@@ -110,7 +110,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
   if (title.includes('تاريخ الجزائر')) {
     return (
       <div
-        className={`relative overflow-hidden shrink-0 shadow-md border border-[#44664B] bg-gradient-to-b from-[#2F4F36] via-[#213B27] to-[#142619] flex flex-col justify-between p-2 text-[#F4F9F5] select-none ${sizeClasses[size]} ${className}`}
+        className={`relative overflow-hidden shrink-0 shadow-sm border border-[#44664B] bg-gradient-to-b from-[#2F4F36] via-[#213B27] to-[#142619] flex flex-col justify-between p-2 text-[#F4F9F5] select-none ${sizeClasses[size]} ${className}`}
       >
         <div className="absolute inset-y-0 right-0 w-[4px] bg-gradient-to-l from-black/35 to-transparent" />
         <div className="text-center font-bold text-[#F3E2C4] leading-tight line-clamp-2 mt-0.5">
@@ -129,7 +129,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
   if (title.includes('الفلسفة')) {
     return (
       <div
-        className={`relative overflow-hidden shrink-0 shadow-md border border-[#583E30] bg-gradient-to-b from-[#3D291F] via-[#2E1E16] to-[#1D120D] flex flex-col justify-between p-2 text-[#FAF3EB] select-none ${sizeClasses[size]} ${className}`}
+        className={`relative overflow-hidden shrink-0 shadow-sm border border-[#583E30] bg-gradient-to-b from-[#3D291F] via-[#2E1E16] to-[#1D120D] flex flex-col justify-between p-2 text-[#FAF3EB] select-none ${sizeClasses[size]} ${className}`}
       >
         <div className="absolute inset-y-0 right-0 w-[4px] bg-gradient-to-l from-black/40 to-transparent" />
         <div className="text-center font-bold text-[#ECC28C] leading-tight line-clamp-2 mt-0.5">
@@ -148,7 +148,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
   if (title.includes('الأدب العربي')) {
     return (
       <div
-        className={`relative overflow-hidden shrink-0 shadow-md border border-[#3A506C] bg-gradient-to-b from-[#243B55] via-[#1A2C40] to-[#101C2B] flex flex-col justify-between p-2 text-[#F0F5FA] select-none ${sizeClasses[size]} ${className}`}
+        className={`relative overflow-hidden shrink-0 shadow-sm border border-[#3A506C] bg-gradient-to-b from-[#243B55] via-[#1A2C40] to-[#101C2B] flex flex-col justify-between p-2 text-[#F0F5FA] select-none ${sizeClasses[size]} ${className}`}
       >
         <div className="absolute inset-y-0 right-0 w-[4px] bg-gradient-to-l from-black/35 to-transparent" />
         <div className="text-center font-bold text-[#E2EEF8] leading-tight line-clamp-2 mt-0.5">
@@ -167,7 +167,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
   if (title.includes('ابن خلدون')) {
     return (
       <div
-        className={`relative overflow-hidden shrink-0 shadow-md border border-[#3E5C47] bg-gradient-to-b from-[#26402E] via-[#1B3022] to-[#101E15] flex flex-col justify-between p-2 text-[#EFF5F0] select-none ${sizeClasses[size]} ${className}`}
+        className={`relative overflow-hidden shrink-0 shadow-sm border border-[#3E5C47] bg-gradient-to-b from-[#26402E] via-[#1B3022] to-[#101E15] flex flex-col justify-between p-2 text-[#EFF5F0] select-none ${sizeClasses[size]} ${className}`}
       >
         <div className="absolute inset-y-0 right-0 w-[4px] bg-gradient-to-l from-black/35 to-transparent" />
         <div className="text-center font-bold text-[#E5D7B7] leading-tight line-clamp-2 mt-0.5">
@@ -190,7 +190,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden shrink-0 shadow-md border bg-gradient-to-b ${palette.gradient} flex flex-col justify-between p-2 select-none ${sizeClasses[size]} ${className}`}
+      className={`relative overflow-hidden shrink-0 shadow-sm border bg-gradient-to-b ${palette.gradient} flex flex-col justify-between p-2 select-none ${sizeClasses[size]} ${className}`}
       style={{ borderColor: palette.border }}
     >
       <div className="absolute inset-y-0 right-0 w-[4px] bg-gradient-to-l from-black/20 to-transparent" />

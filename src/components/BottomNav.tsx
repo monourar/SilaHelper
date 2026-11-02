@@ -21,7 +21,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) 
       aria-label="التنقل الرئيسي"
       className="fixed bottom-0 inset-x-0 z-40 max-w-md mx-auto px-4 pb-[max(env(safe-area-inset-bottom),12px)] pt-1"
     >
-      <div className="bg-white/75 backdrop-blur-2xl border border-white/80 rounded-[28px] shadow-nav shadow-inner-glow px-3 py-1.5 flex items-center justify-around">
+      <div className="bg-white/85 backdrop-blur-2xl border border-white/90 rounded-[28px] shadow-sm px-3 py-1.5 flex items-center justify-around">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;

@@ -62,7 +62,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <form onSubmit={handleSearchSubmit} className="md:col-span-3">
           <GlassCard
             variant="surface"
-            className="flex items-center px-4 py-3 rounded-2xl shadow-glass-sm focus-within:ring-2 focus-within:ring-sila-amber/30 transition-all"
+            className="flex items-center px-4 py-3 rounded-2xl shadow-sm focus-within:ring-2 focus-within:ring-sila-amber/30 transition-all"
           >
             <Search className="w-5 h-5 text-sila-muted/70 shrink-0 ml-3" />
             <input
@@ -89,7 +89,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
         <button
           onClick={onOpenAddModal}
-          className="hidden md:flex bg-gradient-to-r from-sila-amber to-sila-amberLight hover:from-sila-amberHover hover:to-sila-amber text-white py-3 px-5 rounded-2xl font-bold text-sm shadow-glass active:scale-95 transition-all items-center justify-center gap-2"
+          className="hidden md:flex bg-gradient-to-r from-sila-amber to-sila-amberLight text-white py-3 px-5 rounded-2xl font-bold text-sm shadow-sm hover:opacity-95 active:scale-95 transition-all items-center justify-center gap-2"
         >
           <Plus className="w-5 h-5 stroke-[2.5]" />
           <span>إضافة كتاب جديد</span>
@@ -160,7 +160,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         </h2>
         <button
           onClick={() => onNavigateToLibrary()}
-          className="text-xs md:text-sm text-sila-muted hover:text-sila-amber font-semibold flex items-center gap-1 active:scale-95 transition-all"
+          className="text-xs md:text-sm text-sila-muted hover:text-sila-text font-semibold flex items-center gap-1 active:scale-95 transition-all"
         >
           <span>عرض الكل</span>
           <ArrowLeft className="w-4 h-4" />
@@ -187,7 +187,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           </p>
           <button
             onClick={onOpenAddModal}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-sila-amber to-sila-amberLight text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md hover:opacity-95"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-sila-amber to-sila-amberLight text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:opacity-95"
           >
             <Plus className="w-4 h-4" />
             <span>إضافة أول كتاب</span>
@@ -199,7 +199,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       <div className="md:hidden pt-2">
         <button
           onClick={onOpenAddModal}
-          className="w-full bg-gradient-to-r from-sila-amber to-sila-amberLight text-white py-3.5 px-6 rounded-2xl font-bold text-sm shadow-glass active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          className="w-full bg-gradient-to-r from-sila-amber to-sila-amberLight text-white py-3.5 px-6 rounded-2xl font-bold text-sm shadow-sm hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
         >
           <Plus className="w-5 h-5 stroke-[2.5]" />
           <span>إضافة كتاب جديد</span>

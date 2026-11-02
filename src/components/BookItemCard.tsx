@@ -125,7 +125,7 @@ export const BookItemCard: React.FC<BookItemCardProps> = ({
           onClick={handleToggleBookmark}
           title="تغيير الحالة السريعة"
           aria-label="تغيير الحالة السريعة"
-          className="w-11 h-11 flex items-center justify-center text-sila-muted/70 hover:text-sila-amber rounded-full hover:bg-black/5 active:scale-90 transition-transform duration-100 ease-out"
+          className="w-11 h-11 flex items-center justify-center text-sila-muted/70 hover:text-sila-amber rounded-full hover:bg-black/[0.02] active:scale-90 transition-transform duration-100 ease-out"
         >
           <Bookmark
             className={`w-4 h-4 ${
@@ -144,19 +144,19 @@ export const BookItemCard: React.FC<BookItemCardProps> = ({
             onClick={() => setShowMenu((prev) => !prev)}
             title="خيارات إضافية"
             aria-label="خيارات إضافية"
-            className="w-11 h-11 flex items-center justify-center text-sila-muted/70 hover:text-sila-text rounded-full hover:bg-black/5 active:scale-90 transition-transform duration-100 ease-out"
+            className="w-11 h-11 flex items-center justify-center text-sila-muted/70 hover:text-sila-text rounded-full hover:bg-black/[0.02] active:scale-90 transition-transform duration-100 ease-out"
           >
             <MoreHorizontal className="w-4 h-4" />
           </button>
 
           {showMenu && (
-            <div className="absolute left-0 top-10 z-50 w-48 bg-white/95 backdrop-blur-2xl border border-white/90 rounded-2xl shadow-2xl py-1 text-xs origin-top-left animate-in fade-in zoom-in-95 duration-150 ease-out">
+            <div className="absolute left-0 top-10 z-50 w-48 bg-white/95 backdrop-blur-2xl border border-white/90 rounded-2xl shadow-lg py-1 text-xs origin-top-left animate-in fade-in zoom-in-95 duration-150 ease-out">
               <button
                 onClick={() => {
                   setShowMenu(false);
                   onEdit(book);
                 }}
-                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-sila-amberSoft text-sila-text font-medium min-h-[40px]"
+                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-black/[0.02] text-sila-text font-medium min-h-[40px] transition-colors"
               >
                 <Edit3 className="w-4 h-4 text-sila-amber shrink-0" />
                 تعديل بيانات الكتاب
@@ -169,7 +169,7 @@ export const BookItemCard: React.FC<BookItemCardProps> = ({
                   setShowMenu(false);
                   onStatusChange(book.id, 'wanted');
                 }}
-                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-stone-50 text-sila-text min-h-[40px]"
+                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-black/[0.02] text-sila-text min-h-[40px] transition-colors"
               >
                 <ShoppingBag className="w-4 h-4 text-sila-amber shrink-0" />
                 نقل إلى «أريد شراءه»
@@ -180,7 +180,7 @@ export const BookItemCard: React.FC<BookItemCardProps> = ({
                   setShowMenu(false);
                   onStatusChange(book.id, 'purchased');
                 }}
-                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-stone-50 text-sila-text min-h-[40px]"
+                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-black/[0.02] text-sila-text min-h-[40px] transition-colors"
               >
                 <CheckCircle2 className="w-4 h-4 text-sila-green shrink-0" />
                 تحديد «تم شراؤه»
@@ -193,7 +193,7 @@ export const BookItemCard: React.FC<BookItemCardProps> = ({
                   setShowMenu(false);
                   onDelete(book.id);
                 }}
-                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-red-50 text-sila-red font-medium min-h-[40px]"
+                className="w-full text-right px-4 py-2.5 flex items-center gap-2 hover:bg-red-50/50 text-sila-red font-medium min-h-[40px] transition-colors"
               >
                 <Trash2 className="w-4 h-4 text-sila-red shrink-0" />
                 حذف من مكتبتي

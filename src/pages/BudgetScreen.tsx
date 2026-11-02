@@ -75,7 +75,7 @@ export const BudgetScreen: React.FC<BudgetScreenProps> = ({
               setIsEditingBudget(true);
             }
           }}
-          className="text-xs md:text-sm font-bold text-sila-amber hover:text-sila-amberHover flex items-center gap-1.5 active:scale-95 transition-all bg-white/80 hover:bg-white px-4 py-2 rounded-xl border border-white/90 shadow-sm"
+          className="text-xs md:text-sm font-bold text-sila-amber flex items-center gap-1.5 active:scale-95 transition-all bg-white/80 hover:bg-white/90 px-4 py-2 rounded-xl border border-white/90 shadow-sm"
         >
           {isEditingBudget ? (
             <>
@@ -314,7 +314,7 @@ export const BudgetScreen: React.FC<BudgetScreenProps> = ({
                       onStatusChange(book.id, 'purchased');
                     }}
                     title="تحديد كـ تم شراؤه"
-                    className="p-1.5 rounded-full bg-sila-greenSoft text-sila-green hover:bg-sila-green hover:text-white transition-all active:scale-90"
+                    className="p-1.5 rounded-full bg-sila-greenSoft text-sila-green hover:opacity-85 transition-all active:scale-90"
                   >
                     <CheckCircle2 className="w-4 h-4" />
                   </button>

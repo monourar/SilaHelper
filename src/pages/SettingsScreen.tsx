@@ -122,7 +122,7 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
         className="p-5 md:p-6 rounded-3xl flex items-center justify-between"
       >
         <div className="flex items-center gap-3.5">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sila-amber to-sila-amberLight text-white flex items-center justify-center shadow-md shadow-sila-amber/20">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sila-amber to-sila-amberLight text-white flex items-center justify-center shadow-sm">
             <Wallet className="w-6 h-6" />
           </div>
           <div>
@@ -461,7 +461,7 @@ export const SettingsScreen: React.FC<SettingsScreenProps> = ({
             <div className="pt-2 flex items-center gap-2">
               <button
                 onClick={handleClearAll}
-                className="flex-1 py-3 px-4 rounded-xl bg-sila-red text-white text-xs font-bold shadow-md active:scale-95 transition-all"
+                className="flex-1 py-3 px-4 rounded-xl bg-sila-red text-white text-xs font-bold shadow-sm active:scale-95 transition-all"
               >
                 نعم، احذف الكل
               </button>

@@ -102,7 +102,7 @@ export const App: React.FC = () => {
             <img
               src="/sila-logo.png"
               alt="شعار معرض الجزائر الدولي للكتاب SILA"
-              className="w-10 h-10 rounded-2xl object-cover shadow-md border border-white/80 shrink-0 hover:scale-105 transition-transform duration-150 ease-out"
+              className="w-10 h-10 rounded-2xl object-cover shadow-sm border border-white/80 shrink-0"
             />
             <div>
               <div className="font-bold text-base md:text-lg text-sila-text leading-tight font-arabic flex items-center gap-2">
@@ -129,7 +129,7 @@ export const App: React.FC = () => {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                     isActive
                       ? 'bg-white text-sila-amber shadow-sm'
-                      : 'text-sila-muted hover:text-sila-text hover:bg-white/50'
+                      : 'text-sila-muted hover:text-sila-text'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -146,7 +146,7 @@ export const App: React.FC = () => {
                 setBookToEdit(null);
                 setIsAddModalOpen(true);
               }}
-              className="bg-gradient-to-r from-sila-amber to-sila-amberLight hover:from-sila-amberHover hover:to-sila-amber text-white px-3.5 md:px-4 py-2 rounded-xl font-bold text-xs shadow-md active:scale-95 transition-all flex items-center gap-1.5"
+              className="bg-gradient-to-r from-sila-amber to-sila-amberLight text-white px-3.5 md:px-4 py-2 rounded-xl font-bold text-xs shadow-sm hover:opacity-95 active:scale-95 transition-all flex items-center gap-1.5"
             >
               <Plus className="w-4 h-4 stroke-[2.5]" />
               <span>إضافة كتاب</span>

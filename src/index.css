@@ -70,7 +70,7 @@ body {
 /* Accessible focus visible rings */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2.5px #A86D2D;
+  box-shadow: 0 0 0 2px rgba(168, 109, 45, 0.4);
 }
 
 /* Tactile button press feedback */

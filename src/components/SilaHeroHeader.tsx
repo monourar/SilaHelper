@@ -3,7 +3,7 @@ import { Sparkles, MapPin, Calendar } from 'lucide-react';
 
 export const SilaHeroHeader: React.FC = () => {
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/90 via-[#F7F1E8]/80 to-[#ECE0D0]/70 border border-white/80 shadow-glass p-5 md:p-7 mb-5">
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/90 via-[#F7F1E8]/80 to-[#ECE0D0]/70 border border-white/80 shadow-sm p-5 md:p-7 mb-5">
       {/* Ambient background light gradients */}
       <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gradient-to-br from-[#C28A45]/15 to-transparent blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-gradient-to-tr from-[#A86D2D]/10 to-transparent blur-3xl pointer-events-none" />
@@ -42,7 +42,7 @@ export const SilaHeroHeader: React.FC = () => {
           <img
             src="/sila-logo.png"
             alt="SILA Emblem"
-            className="w-20 h-20 rounded-3xl object-cover shadow-glass-hover border-2 border-white/90 transform hover:scale-105 transition-transform duration-200"
+            className="w-20 h-20 rounded-3xl object-cover shadow-sm border-2 border-white/90"
           />
         </div>
       </div>
