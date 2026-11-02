@@ -5,7 +5,7 @@ import { BookCover } from '../components/BookCover';
 import { GlassCard } from '../components/GlassCard';
 import { matchesArabic } from '../utils/arabic';
 import { formatDZD } from '../utils/formatters';
-import { Search, SlidersHorizontal, LayoutGrid, List, Plus, MapPin, CheckCircle2 } from 'lucide-react';
+import { Search, SlidersHorizontal, LayoutGrid, List, Plus, MapPin, CheckCircle2, ChevronDown } from 'lucide-react';
 
 interface LibraryScreenProps {
   books: Book[];
@@ -202,34 +202,40 @@ export const LibraryScreen: React.FC<LibraryScreenProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex items-center justify-between text-xs font-bold text-sila-text">
               <span>ترتيب حسب:</span>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="bg-white border border-[#E0D5C7] rounded-xl px-3 py-1.5 text-xs text-sila-text outline-none"
-              >
-                <option value="recent">الأحدث إضافة</option>
-                <option value="title">اسم الكتاب (أ - ي)</option>
-                <option value="price-asc">السعر: من الأقل للأعلى</option>
-                <option value="price-desc">السعر: من الأعلى للأقل</option>
-                <option value="stand">الجناح</option>
-              </select>
+              <div className="relative flex items-center">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as SortOption)}
+                  className="appearance-none bg-white border border-[#E0D5C7] rounded-xl pr-3.5 pl-8 py-1.5 text-xs text-sila-text outline-none cursor-pointer"
+                >
+                  <option value="recent">الأحدث إضافة</option>
+                  <option value="title">اسم الكتاب (أ - ي)</option>
+                  <option value="price-asc">السعر: من الأقل للأعلى</option>
+                  <option value="price-desc">السعر: من الأعلى للأقل</option>
+                  <option value="stand">الجناح</option>
+                </select>
+                <ChevronDown className="w-3.5 h-3.5 text-sila-muted/70 absolute left-2.5 pointer-events-none" />
+              </div>
             </div>
 
             {halls.length > 0 && (
               <div className="flex items-center justify-between text-xs font-bold text-sila-text">
                 <span>تصفية حسب القاعة:</span>
-                <select
-                  value={selectedHall}
-                  onChange={(e) => setSelectedHall(e.target.value)}
-                  className="bg-white border border-[#E0D5C7] rounded-xl px-3 py-1.5 text-xs text-sila-text outline-none max-w-[180px] truncate"
-                >
-                  <option value="all">جميع القاعات</option>
-                  {halls.map((h) => (
-                    <option key={h} value={h}>
-                      {h}
-                    </option>
-                  ))}
-                </select>
+                <div className="relative flex items-center">
+                  <select
+                    value={selectedHall}
+                    onChange={(e) => setSelectedHall(e.target.value)}
+                    className="appearance-none bg-white border border-[#E0D5C7] rounded-xl pr-3.5 pl-8 py-1.5 text-xs text-sila-text outline-none max-w-[190px] truncate cursor-pointer"
+                  >
+                    <option value="all">جميع القاعات</option>
+                    {halls.map((h) => (
+                      <option key={h} value={h}>
+                        {h}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="w-3.5 h-3.5 text-sila-muted/70 absolute left-2.5 pointer-events-none" />
+                </div>
               </div>
             )}
           </div>

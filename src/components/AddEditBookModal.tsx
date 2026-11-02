@@ -3,7 +3,7 @@ import { Book, BookStatus, HALL_OPTIONS } from '../types/book';
 import { db } from '../db/database';
 import { compressImage, generateThumbnail } from '../utils/image';
 import { BookCover } from './BookCover';
-import { X, Camera, BookOpen, User, Building2, MapPin, Tag, ShoppingCart, Check, Bookmark, Trash2 } from 'lucide-react';
+import { X, Camera, BookOpen, User, Building2, MapPin, Tag, ShoppingCart, Check, Bookmark, Trash2, ChevronDown } from 'lucide-react';
 
 interface AddEditBookModalProps {
   isOpen: boolean;
@@ -350,17 +350,20 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
               <label className="block text-xs font-semibold text-sila-text mb-1">
                 القاعة
               </label>
-              <select
-                value={hall}
-                onChange={(e) => setHall(e.target.value)}
-                className="w-full bg-white/75 border border-[#E0D5C7] focus:border-sila-amber focus:ring-2 focus:ring-sila-amber/20 rounded-xl px-3 py-2.5 text-xs text-sila-text outline-none transition-all"
-              >
-                {HALL_OPTIONS.map((h) => (
-                  <option key={h} value={h}>
-                    {h}
-                  </option>
-                ))}
-              </select>
+              <div className="relative flex items-center">
+                <select
+                  value={hall}
+                  onChange={(e) => setHall(e.target.value)}
+                  className="w-full appearance-none bg-white/75 border border-[#E0D5C7] focus:border-sila-amber focus:ring-2 focus:ring-sila-amber/20 rounded-xl pr-3.5 pl-9 py-2.5 text-xs text-sila-text outline-none transition-all cursor-pointer"
+                >
+                  {HALL_OPTIONS.map((h) => (
+                    <option key={h} value={h}>
+                      {h}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="w-4 h-4 text-sila-muted/70 absolute left-3 pointer-events-none" />
+              </div>
             </div>
 
             <div>
