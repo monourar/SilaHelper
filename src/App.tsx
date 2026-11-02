@@ -8,6 +8,7 @@ import { LibraryScreen } from './pages/LibraryScreen';
 import { BudgetScreen } from './pages/BudgetScreen';
 import { SettingsScreen } from './pages/SettingsScreen';
 import { AddEditBookModal } from './components/AddEditBookModal';
+import { OnboardingBudgetModal } from './components/OnboardingBudgetModal';
 import { BookOpen, Home, BarChart3, Settings, Plus, WifiOff } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -219,6 +220,13 @@ export const App: React.FC = () => {
           setIsAddModalOpen(false);
           setBookToEdit(null);
         }}
+      />
+
+      {/* First Enter Onboarding Budget Question */}
+      <OnboardingBudgetModal
+        isOpen={Boolean(settings && !settings.hasSeenOnboarding)}
+        settings={settings}
+        onComplete={() => {}}
       />
     </div>
   );
