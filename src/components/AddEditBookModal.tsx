@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Book, BookStatus, HALL_OPTIONS } from '../types/book';
 import { db } from '../db/database';
-import { compressImage, generateThumbnail } from '../utils/image';
+import { generateThumbnail } from '../utils/image';
 import { BookCover } from './BookCover';
-import { X, Camera, BookOpen, User, Building2, MapPin, Tag, ShoppingCart, Check, Bookmark, Trash2, ChevronDown } from 'lucide-react';
+import { ImageCropModal } from './ImageCropModal';
+import { X, Camera, BookOpen, User, Building2, MapPin, Tag, ShoppingCart, Check, Bookmark, Trash2, ChevronDown, Crop } from 'lucide-react';
 
 interface AddEditBookModalProps {
   isOpen: boolean;
@@ -33,6 +34,10 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
   const [hasRemovedExistingImage, setHasRemovedExistingImage] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Built-in Image Crop states
+  const [isCropModalOpen, setIsCropModalOpen] = useState(false);
+  const [pendingCropFile, setPendingCropFile] = useState<File | Blob | null>(null);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -78,24 +83,44 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleImageSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    try {
-      // Compress immediately for memory optimization
-      const compressed = await compressImage(file);
-      setSelectedImageBlob(compressed);
-      
-      if (imagePreviewUrl) {
-        URL.revokeObjectURL(imagePreviewUrl);
+    setPendingCropFile(file);
+    setIsCropModalOpen(true);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
+  const handleCropComplete = (croppedBlob: Blob) => {
+    setSelectedImageBlob(croppedBlob);
+    if (imagePreviewUrl) {
+      URL.revokeObjectURL(imagePreviewUrl);
+    }
+    const newUrl = URL.createObjectURL(croppedBlob);
+    setImagePreviewUrl(newUrl);
+    setHasRemovedExistingImage(false);
+    setPendingCropFile(null);
+  };
+
+  const handleOpenCropForCurrent = async () => {
+    if (selectedImageBlob) {
+      setPendingCropFile(selectedImageBlob);
+      setIsCropModalOpen(true);
+      return;
+    }
+    if (bookToEdit?.coverImageId) {
+      try {
+        const coverRecord = await db.coverImages.get(bookToEdit.coverImageId);
+        if (coverRecord?.blob) {
+          setPendingCropFile(coverRecord.blob);
+          setIsCropModalOpen(true);
+        }
+      } catch (err) {
+        console.error('Failed to load existing image for cropping:', err);
       }
-      const newUrl = URL.createObjectURL(compressed);
-      setImagePreviewUrl(newUrl);
-      setHasRemovedExistingImage(false);
-    } catch (err) {
-      console.error('Failed to process image:', err);
-      alert('تعذر معالجة الصورة، يرجى تجربة صورة أخرى');
     }
   };
 
@@ -267,13 +292,24 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
               />
             </div>
             {(imagePreviewUrl || (!hasRemovedExistingImage && bookToEdit?.coverImageId)) && (
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="mt-2 text-xs text-sila-amber font-semibold hover:underline"
-              >
-                تغيير الصورة
-              </button>
+              <div className="flex items-center gap-3 mt-2">
+                <button
+                  type="button"
+                  onClick={handleOpenCropForCurrent}
+                  className="text-xs text-sila-amber font-semibold hover:opacity-85 flex items-center gap-1 active:scale-95 transition-all"
+                >
+                  <Crop className="w-3.5 h-3.5" />
+                  <span>قص وتعديل</span>
+                </button>
+                <span className="text-stone-300">•</span>
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="text-xs text-sila-muted font-semibold hover:text-sila-text active:scale-95 transition-all"
+                >
+                  تغيير الصورة
+                </button>
+              </div>
             )}
           </div>
 
@@ -501,6 +537,17 @@ export const AddEditBookModal: React.FC<AddEditBookModalProps> = ({
           </button>
         </div>
       </div>
+
+      {/* Built-in Image Crop & Edit Modal */}
+      <ImageCropModal
+        isOpen={isCropModalOpen}
+        imageFile={pendingCropFile}
+        onClose={() => {
+          setIsCropModalOpen(false);
+          setPendingCropFile(null);
+        }}
+        onCropComplete={handleCropComplete}
+      />
     </div>
   );
 };
