@@ -102,7 +102,7 @@ export const App: React.FC = () => {
             <img
               src="/sila-logo.png"
               alt="شعار معرض الجزائر الدولي للكتاب SILA"
-              className="w-10 h-10 rounded-2xl object-cover shadow-sm border border-white/80 shrink-0"
+              className="w-10 h-10 object-contain shrink-0"
             />
             <div>
               <div className="font-bold text-base md:text-lg text-sila-text leading-tight font-arabic flex items-center gap-2">

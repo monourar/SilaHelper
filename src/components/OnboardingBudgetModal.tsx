@@ -70,7 +70,7 @@ export const OnboardingBudgetModal: React.FC<OnboardingBudgetModalProps> = ({
             <img
               src="/sila-logo.png"
               alt="شعار SILA"
-              className="w-20 h-20 rounded-3xl shadow-sm border-2 border-white object-cover"
+              className="w-20 h-20 object-contain drop-shadow-sm"
             />
             <div className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-sila-amber text-white flex items-center justify-center shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />

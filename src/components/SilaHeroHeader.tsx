@@ -42,7 +42,7 @@ export const SilaHeroHeader: React.FC = () => {
           <img
             src="/sila-logo.png"
             alt="SILA Emblem"
-            className="w-20 h-20 rounded-3xl object-cover shadow-sm border-2 border-white/90"
+            className="w-20 h-20 object-contain drop-shadow-sm"
           />
         </div>
       </div>
