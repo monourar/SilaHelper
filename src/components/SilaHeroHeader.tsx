@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
 
 export const SilaHeroHeader: React.FC = () => {
   return (
@@ -11,11 +11,6 @@ export const SilaHeroHeader: React.FC = () => {
       <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         {/* Title and subtitle */}
         <div className="space-y-1.5">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sila-amberSoft/90 border border-sila-amber/20 text-sila-amber text-xs font-semibold backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>معرض الجزائر الدولي للكتاب · SILA</span>
-          </div>
-
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-sila-text font-arabic">
             مكتبتي في المعرض
           </h1>
